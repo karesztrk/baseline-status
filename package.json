@@ -1,5 +1,5 @@
 {
-  "name": "baseline-status",
+  "name": "@karesztrk/baseline-status",
   "version": "1.0.7",
   "description": "A widget displaying Baseline status of a web feature",
   "main": "baseline-status.min.js",
@@ -10,12 +10,14 @@
     "test": "wtr test/**/*.test.js --node-resolve",
     "test:update": "wtr test/**/*.test.js --node-resolve --update-snapshots"
   },
-  "author": "ewag@google.com",
+  "author": "Károly Török",
+  "contributors": [
+    "ewag@google.com"
+  ],
   "license": "Apache-2.0",
   "repository": "github:web-platform-dx/baseline-status",
   "dependencies": {
-    "@lit/task": "^1.0.0",
-    "lit": "^3.1.3"
+    "@karesztrk/webcomponent-base": "^1.0.10"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",
