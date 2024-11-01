@@ -1,0 +1,5 @@
+{
+  "name": "@karesztrk/baseline-status",
+  "version": "1.0.7",
+  "exports": "./baseline-status.js"
+}

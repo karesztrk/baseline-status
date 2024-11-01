@@ -1,0 +1,15 @@
+{
+	"version": 3,
+	"file": "index.d.ts",
+	"names": [
+		"Feature"
+	],
+	"sources": [
+		"../src/baseline-status.js"
+	],
+	"sourcesContent": [
+		null
+	],
+	"mappings": ";;;;;;;;;;;;;;;;;;;;MAiG4DA,OAAOA",
+	"ignoreList": []
+}
