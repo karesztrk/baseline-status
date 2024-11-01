@@ -13,16 +13,35 @@ declare module '@karesztrk/baseline-status' {
 	class BaselineIcon extends ShadowElement {
 		styles: string;
 		
-		get support(): string;
-		
-		render(): void;
+		get support(): string | null;
 	}
 	export default BaselineStatus;
 	type Feature = {
-		baseline: {
-			status: string;
-		};
-		name: boolean;
+		baseline: BaselineType;
+		feature_id?: string | undefined;
+		name: string;
+		spec?: SpecType | undefined;
+		browser_implementations?: BrowserImplementations | undefined;
+	};
+	type BaselineType = {
+		high_date?: string | undefined;
+		low_date?: string | undefined;
+		status: Status;
+	};
+	type BrowserImplementations = {
+		chrome: BrowserImplementation;
+		edge: BrowserImplementation;
+		firefox: BrowserImplementation;
+		safari: BrowserImplementation;
+	};
+	type BrowserImplementation = {
+		date: string;
+		status: Status;
+		version: string;
+	};
+	type Status = 'limited' | 'newly' | 'widely' | 'no_data';
+	type SpecType = {
+		links: object[];
 	};
 	/**
 	 * A web component that renders Baseline support information based on the
@@ -34,27 +53,32 @@ declare module '@karesztrk/baseline-status' {
 	 * <baseline-status featureId="anchor-positioning"></baseline-status>
 	 */
 
+
+
+
+
+
 	class BaselineStatus extends ShadowElement {
 		
 		feature: Feature;
 		styles: string;
 		
-		get featureId(): string;
+		get featureId(): string | null;
 		
 		fetchData(): Promise<Feature>;
 		
-		renderSupportIcon(baseline: string, browserImplementation: object): string;
+		renderSupportIcon(baseline: Status, browserImplementation?: BrowserImplementation | undefined): string;
 		/**
 		 * Returns feature's low_date as mm-yyyy string or empty string if low_date
 		 * is not present.
 		 * */
-		getBaselineDate(feature: object): string;
+		getBaselineDate(feature: Feature): string;
 		/**
 		 * Returns Baseline's description.
 		 * */
-		getDescriptionDate(baseline: string, date: string): string;
+		getDescriptionDate(baseline: Status, date: string): string;
 		
-		renderTemplate(feature: Feature, isLoading: boolean): string;
+		renderTemplate(feature: Feature, isLoading?: boolean | undefined): string;
 		
 		reRender(): void;
 	}
