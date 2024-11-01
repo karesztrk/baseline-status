@@ -5,10 +5,6 @@ import { ShadowElement } from "@karesztrk/webcomponent-base";
  * @see https://web.dev/baseline
  */
 class BaselineIcon extends ShadowElement {
-  static {
-    this.register("baseline-icon", BaselineIcon);
-  }
-
   styles = `
       :host {
         --baseline-icon-limited: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='20' viewBox='0 0 36 20' fill='none'%3E%3Cpath d='M10 0L16 6L14 8L8 2L10 0Z' fill='%23F09409'/%3E%3Cpath d='M28 2L36 10L28 18L26 16L32 10L26 4L28 2Z' fill='%23C6C6C6'/%3E%3Cpath d='M22 12L20 14L26 20L28 18L22 12Z' fill='%23F09409'/%3E%3Cpath d='M8 2L10 4L4 10L10 16L8 18L0 10L8 2Z' fill='%23C6C6C6'/%3E%3Cpath d='M26 0L28 2L10 20L8 18L26 0Z' fill='%23F09409'/%3E%3C/svg%3E");
@@ -52,14 +48,14 @@ class BaselineIcon extends ShadowElement {
     `;
 
   /**
-   * @returns {string}
+   * @returns {string | null}
    */
   get support() {
     return this.getAttribute("support");
   }
 
   /**
-   * @returns {void}
+   * @returns {string}
    */
   render() {
     return ` <div class="support-${this.support}"></div> `;

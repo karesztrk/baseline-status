@@ -5,8 +5,17 @@ import summary from "rollup-plugin-summary";
 import { defineConfig } from "rollup";
 
 export default defineConfig({
-  input: "./src/baseline-status.js",
-  output: { file: "./dist/baseline-status.min.js" },
+  input: "./src/index.js",
+  output: [
+    {
+      dir: "dist",
+      format: "es",
+      exports: "named",
+      preserveModules: true,
+      preserveModulesRoot: "src",
+      sourcemap: true,
+    },
+  ],
   plugins: [
     resolve(),
     minifyHTML(),
