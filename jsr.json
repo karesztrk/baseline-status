@@ -1,5 +1,7 @@
 {
   "name": "@karesztrk/baseline-status",
-  "version": "1.0.7",
-  "exports": "./baseline-status.js"
+  "version": "1.0.8",
+  "exports": {
+    ".": "./src/index.js"
+  }
 }
