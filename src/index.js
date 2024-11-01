@@ -1,4 +1,4 @@
-import BaselineIcon from "./baseline-icon.js";
-import BaselineStatus from "./baseline-status.js";
+import BaselineStatus from "./BaselineStatus.js";
+import BaselineIcon from "./BaselineIcon.js";
 
-export default { BaselineIcon, BaselineStatus };
+export { BaselineIcon, BaselineStatus };

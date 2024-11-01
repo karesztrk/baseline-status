@@ -1,7 +1,6 @@
 import { ShadowElement } from "@karesztrk/webcomponent-base";
-import "./baseline-icon";
 
-const ICONS = {
+const ICONS = /** @type {const} */ {
   chrome: `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none"><g clip-path="url(#a)"><path fill="#fff" d="M10.2 15.3a5.1 5.1 0 1 0 0-10.2 5.1 5.1 0 0 0 0 10.2Z"/><path fill="#229342" d="M5.783 12.75 1.367 5.103A10.198 10.198 0 0 0 10.201 20.4l4.416-7.65a5.098 5.098 0 0 1-8.834.001Z"/><path fill="#FBC116" d="M14.617 12.75 10.2 20.4a10.199 10.199 0 0 0 8.831-15.3H10.2a5.1 5.1 0 0 1 4.418 7.65Z"/><path fill="#229342" d="M10.2 14.238a4.038 4.038 0 1 0 0-8.075 4.038 4.038 0 0 0 0 8.075Z"/><path fill="#E33B2E" d="M10.2 5.1h8.833a10.198 10.198 0 0 0-17.666.002l4.416 7.649h.002a5.1 5.1 0 0 1 4.415-7.65Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h20.4v20.4H0z"/></clipPath></defs></svg>`,
   edge: `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none"><g clip-path="url(#a)"><path fill="url(#b)" d="M18.416 15.18a7.485 7.485 0 0 1-.845.375 8.121 8.121 0 0 1-2.86.51c-3.77 0-7.053-2.59-7.053-5.92a2.51 2.51 0 0 1 1.307-2.176c-3.41.143-4.287 3.697-4.287 5.777 0 5.897 5.427 6.487 6.598 6.487.63 0 1.578-.184 2.152-.367l.103-.032a10.224 10.224 0 0 0 5.307-4.207.319.319 0 0 0-.422-.447Z"/><path fill="url(#c)" d="M18.416 15.18a7.485 7.485 0 0 1-.845.375 8.121 8.121 0 0 1-2.86.51c-3.77 0-7.053-2.59-7.053-5.92a2.51 2.51 0 0 1 1.307-2.176c-3.41.143-4.287 3.697-4.287 5.777 0 5.897 5.427 6.487 6.598 6.487.63 0 1.578-.184 2.152-.367l.103-.032a10.224 10.224 0 0 0 5.307-4.207.319.319 0 0 0-.422-.447Z" opacity=".35"/><path fill="url(#d)" d="M8.423 19.229a6.31 6.31 0 0 1-1.809-1.698A6.43 6.43 0 0 1 8.965 7.97c.255-.12.677-.327 1.243-.319a2.582 2.582 0 0 1 2.048 1.036c.32.431.497.953.502 1.49 0-.016 1.953-6.343-6.375-6.343-3.498 0-6.375 3.315-6.375 6.232-.014 1.54.316 3.065.964 4.462a10.2 10.2 0 0 0 12.464 5.34 6.015 6.015 0 0 1-5.005-.638h-.008Z"/><path fill="url(#e)" d="M8.423 19.229a6.31 6.31 0 0 1-1.809-1.698A6.43 6.43 0 0 1 8.965 7.97c.255-.12.677-.327 1.243-.319a2.582 2.582 0 0 1 2.048 1.036c.32.431.497.953.502 1.49 0-.016 1.953-6.343-6.375-6.343-3.498 0-6.375 3.315-6.375 6.232-.014 1.54.316 3.065.964 4.462a10.2 10.2 0 0 0 12.464 5.34 6.015 6.015 0 0 1-5.005-.638h-.008Z" opacity=".41"/><path fill="url(#f)" d="M12.145 11.857c-.072.08-.271.2-.271.447 0 .207.135.414.382.582 1.14.796 3.3.685 3.307.685a4.75 4.75 0 0 0 2.415-.662A4.893 4.893 0 0 0 20.4 8.694c.024-1.785-.637-2.972-.9-3.498C17.802 1.896 14.16 0 10.2 0A10.2 10.2 0 0 0 0 10.057c.04-2.909 2.933-5.26 6.375-5.26.28 0 1.873.024 3.347.797a5.786 5.786 0 0 1 2.463 2.335c.486.845.573 1.92.573 2.35 0 .431-.215 1.06-.621 1.587l.008-.008Z"/><path fill="url(#g)" d="M12.145 11.857c-.072.08-.271.2-.271.447 0 .207.135.414.382.582 1.14.796 3.3.685 3.307.685a4.75 4.75 0 0 0 2.415-.662A4.893 4.893 0 0 0 20.4 8.694c.024-1.785-.637-2.972-.9-3.498C17.802 1.896 14.16 0 10.2 0A10.2 10.2 0 0 0 0 10.057c.04-2.909 2.933-5.26 6.375-5.26.28 0 1.873.024 3.347.797a5.786 5.786 0 0 1 2.463 2.335c.486.845.573 1.92.573 2.35 0 .431-.215 1.06-.621 1.587l.008-.008Z"/></g><defs><radialGradient id="c" cx="0" cy="0" r="1" gradientTransform="matrix(7.60219 0 0 7.22208 12.527 14.212)" gradientUnits="userSpaceOnUse"><stop offset=".7" stop-opacity="0"/><stop offset=".9" stop-opacity=".5"/><stop offset="1"/></radialGradient><radialGradient id="e" cx="0" cy="0" r="1" gradientTransform="rotate(-81.384 12.03 4.657) scale(11.4261 9.23112)" gradientUnits="userSpaceOnUse"><stop offset=".8" stop-opacity="0"/><stop offset=".9" stop-opacity=".5"/><stop offset="1"/></radialGradient><radialGradient id="f" cx="0" cy="0" r="1" gradientTransform="rotate(92.291 -.78 2.876) scale(16.1416 34.3784)" gradientUnits="userSpaceOnUse"><stop stop-color="#35C1F1"/><stop offset=".1" stop-color="#34C1ED"/><stop offset=".2" stop-color="#2FC2DF"/><stop offset=".3" stop-color="#2BC3D2"/><stop offset=".7" stop-color="#36C752"/></radialGradient><radialGradient id="g" cx="0" cy="0" r="1" gradientTransform="matrix(2.171 7.44345 -6.05301 1.76546 19.13 6.16)" gradientUnits="userSpaceOnUse"><stop stop-color="#66EB6E"/><stop offset="1" stop-color="#66EB6E" stop-opacity="0"/></radialGradient><linearGradient id="b" x1="4.678" x2="18.894" y1="14.105" y2="14.105" gradientUnits="userSpaceOnUse"><stop stop-color="#0C59A4"/><stop offset="1" stop-color="#114A8B"/></linearGradient><linearGradient id="d" x1="12.168" x2="3.299" y1="7.937" y2="17.603" gradientUnits="userSpaceOnUse"><stop stop-color="#1B9DE2"/><stop offset=".2" stop-color="#1595DF"/><stop offset=".7" stop-color="#0680D7"/><stop offset="1" stop-color="#0078D4"/></linearGradient><clipPath id="a"><path fill="#fff" d="M0 0h20.4v20.4H0z"/></clipPath></defs></svg>`,
   firefox: `<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none"><g clip-path="url(#M)"><path d="M19.661 6.85c-.444-1.034-1.344-2.15-2.049-2.503.503.942.851 1.955 1.034 3l.002.017c-1.155-2.786-3.112-3.911-4.711-6.358l-.241-.379-.113-.204a1.76 1.76 0 0 1-.152-.392c-.011-.022-.017-.025-.023-.026-.021 0-.023.002-.024.003l-.003-.003C10.816 1.46 9.945 4.152 9.866 5.499c-1.025.068-2.004.434-2.811 1.049a3.05 3.05 0 0 0-.263-.193c-.233-.789-.243-1.623-.029-2.417-.942.442-1.779 1.068-2.458 1.84H4.3c-.405-.497-.376-2.135-.353-2.477-.12.047-.234.105-.341.175-.357.247-.691.524-.998.828-.35.343-.669.714-.955 1.109v.002-.002a8.22 8.22 0 0 0-1.37 2.995l-.014.065c-.019.087-.089.523-.1.617 0 .007-.002.014-.002.022A9.14 9.14 0 0 0 0 10.475v.051c.005 2.474.967 4.857 2.697 6.678s4.103 2.948 6.649 3.158a10.45 10.45 0 0 0 7.105-2.023c2.023-1.511 3.388-3.702 3.825-6.14l.046-.383c.21-1.683-.017-3.391-.662-4.967l.001.002zm-11.77 7.741l.141.067.007.004-.149-.072zm10.758-7.224v-.009l.002.01-.002-.001z" fill="url(#A)"/><use href="#N" fill="url(#B)"/><use href="#N" fill="url(#C)"/><path d="M14.697 8.011l.064.045c-.257-.44-.576-.844-.949-1.198C10.637 3.784 12.98.194 13.375.01l.004-.006c-2.565 1.454-3.436 4.146-3.515 5.493l.359-.018c.91.002 1.803.237 2.589.681a5.07 5.07 0 0 1 1.885 1.849v.001z" fill="url(#D)"/><use href="#O" fill="url(#E)"/><use href="#O" fill="url(#F)"/><path d="M6.576 6.22l.211.135c-.233-.789-.243-1.623-.029-2.417-.942.442-1.779 1.068-2.458 1.84.05-.001 1.531-.027 2.276.442z" fill="url(#G)"/><path d="M.093 10.761c.788 4.508 5.009 7.952 9.799 8.083 4.434.121 7.267-2.371 8.437-4.802.991-2.102 1.105-4.493.318-6.674v-.009l.002.007c.362 2.29-.841 4.508-2.722 6.011l-.006.013c-3.665 2.891-7.172 1.744-7.881 1.276l-.149-.072c-2.137-.989-3.02-2.873-2.83-4.49-.507.007-1.006-.128-1.435-.39s-.771-.638-.984-1.084c.561-.333 1.2-.521 1.858-.546a3.96 3.96 0 0 1 1.897.4 5.24 5.24 0 0 0 3.834.146c-.004-.08-1.781-.765-2.474-1.426-.37-.353-.546-.524-.702-.651-.084-.069-.172-.134-.263-.193l-.211-.135c-.745-.469-2.226-.443-2.275-.442h-.005c-.405-.497-.376-2.135-.353-2.477-.12.047-.234.105-.341.175-.357.247-.691.524-.998.828-.351.342-.672.712-.959 1.107A8.22 8.22 0 0 0 .28 8.409c-.005.02-.368 1.556-.189 2.353h.002z" fill="url(#H)"/><path d="M13.812 6.858c.373.355.692.758.948 1.199l.153.121c2.315 2.067 1.102 4.988 1.012 5.195 1.881-1.5 3.083-3.72 2.722-6.011-1.155-2.789-3.114-3.914-4.711-6.361l-.241-.379-.113-.204a1.76 1.76 0 0 1-.152-.392c-.011-.022-.017-.025-.023-.026-.021 0-.023.002-.024.003-.402.185-2.745 3.777.43 6.849l-.001.004z" fill="url(#I)"/><path d="M14.913 8.179c-.045-.04-.097-.08-.153-.121l-.063-.045c-.718-.482-1.596-.688-2.462-.579 3.673 1.778 2.688 7.902-2.403 7.672-.453-.018-.901-.102-1.329-.248l-.3-.119-.172-.08.007.004c.71.469 4.216 1.616 7.881-1.276l.006-.013c.091-.207 1.305-3.128-1.012-5.195l.001-.001z" fill="url(#J)"/><path d="M5.625 11.419S6.096 9.718 9 9.718c.314 0 1.212-.848 1.228-1.094a5.24 5.24 0 0 1-3.834-.146 3.96 3.96 0 0 0-1.897-.4c-.657.026-1.297.214-1.858.546.213.446.555.822.984 1.084s.928.397 1.435.39c-.189 1.617.694 3.5 2.83 4.49l.141.067c-1.247-.624-2.277-1.804-2.405-3.235v-.001z" fill="url(#K)"/><path d="M19.661 6.845c-.444-1.034-1.344-2.15-2.049-2.503a10.05 10.05 0 0 1 1.034 3l.002.017c-1.155-2.786-3.112-3.911-4.711-6.358l-.241-.379-.112-.204c-.066-.124-.117-.256-.152-.392-.011-.022-.017-.025-.023-.026-.02 0-.023.002-.024.003l-.003-.003c-2.565 1.454-3.436 4.146-3.515 5.493l.359-.018c.91.002 1.803.237 2.589.681a5.07 5.07 0 0 1 1.885 1.849c-.718-.482-1.596-.688-2.462-.579 3.673 1.778 2.688 7.902-2.403 7.672-.453-.018-.901-.102-1.329-.248l-.3-.119-.172-.08.007.004-.149-.072.141.067c-1.247-.624-2.277-1.804-2.405-3.235 0 0 .471-1.701 3.375-1.701.314 0 1.212-.848 1.228-1.094-.004-.08-1.781-.765-2.474-1.426l-.702-.651a3.05 3.05 0 0 0-.263-.193c-.233-.789-.243-1.623-.029-2.417-.942.442-1.779 1.068-2.458 1.84H4.3c-.405-.497-.376-2.135-.353-2.477-.12.047-.234.105-.341.175-.357.247-.691.524-.998.828-.35.343-.669.714-.955 1.109a8.22 8.22 0 0 0-1.37 2.995l-.014.065-.118.624A11.15 11.15 0 0 0 0 10.473v.051c.005 2.474.967 4.857 2.697 6.678S6.8 20.15 9.347 20.36a10.45 10.45 0 0 0 7.105-2.023c2.023-1.511 3.388-3.702 3.825-6.14l.046-.383c.21-1.683-.017-3.391-.662-4.967l.001-.001z" fill="url(#L)"/></g><defs><linearGradient id="A" x1="18.309" y1="3.165" x2="1.883" y2="19.533" href="#P"><stop offset=".048" stop-color="#fff44f"/><stop offset=".111" stop-color="#ffe847"/><stop offset=".225" stop-color="#ffc830"/><stop offset=".368" stop-color="#ff980e"/><stop offset=".401" stop-color="#ff8b16"/><stop offset=".462" stop-color="#ff672a"/><stop offset=".534" stop-color="#ff3647"/><stop offset=".705" stop-color="#e31587"/></linearGradient><radialGradient id="B" cx="0" cy="0" r="1" gradientTransform="translate(17.6533 2.30078) scale(21.2899 20.6149)" href="#P"><stop offset=".129" stop-color="#ffbd4f"/><stop offset=".186" stop-color="#ffac31"/><stop offset=".247" stop-color="#ff9d17"/><stop offset=".283" stop-color="#ff980e"/><stop offset=".403" stop-color="#ff563b"/><stop offset=".467" stop-color="#ff3750"/><stop offset=".71" stop-color="#f5156c"/><stop offset=".782" stop-color="#eb0878"/><stop offset=".86" stop-color="#e50080"/></radialGradient><radialGradient id="C" cx="0" cy="0" r="1" gradientTransform="matrix(21.2899,0,0,20.6149,9.74862,10.7203)" href="#P"><stop offset=".3" stop-color="#960e18"/><stop offset=".351" stop-color="#b11927" stop-opacity=".74"/><stop offset=".435" stop-color="#db293d" stop-opacity=".343"/><stop offset=".497" stop-color="#f5334b" stop-opacity=".094"/><stop offset=".53" stop-color="#ff3750" stop-opacity="0"/></radialGradient><radialGradient id="D" cx="0" cy="0" r="1" gradientTransform="translate(12.3835 -2.29164) scale(15.422 14.9331)" href="#P"><stop offset=".132" stop-color="#fff44f"/><stop offset=".252" stop-color="#ffdc3e"/><stop offset=".506" stop-color="#ff9d12"/><stop offset=".526" stop-color="#ff980e"/></radialGradient><radialGradient id="E" cx="0" cy="0" r="1" gradientTransform="translate(7.37722 16.0781) scale(10.1364 9.81506)" href="#P"><stop offset=".353" stop-color="#3a8ee6"/><stop offset=".472" stop-color="#5c79f0"/><stop offset=".669" stop-color="#9059ff"/><stop offset="1" stop-color="#c139e6"/></radialGradient><radialGradient id="F" cx="0" cy="0" r="1" gradientTransform="matrix(5.224671177371898,-1.223117268801049,1.391360771064786,5.943340596469464,10.7783,8.95064)" href="#P"><stop offset=".206" stop-color="#9059ff" stop-opacity="0"/><stop offset=".278" stop-color="#8c4ff3" stop-opacity=".064"/><stop offset=".747" stop-color="#7716a8" stop-opacity=".45"/><stop offset=".975" stop-color="#6e008b" stop-opacity=".6"/></radialGradient><radialGradient id="G" cx="0" cy="0" r="1" gradientTransform="translate(9.48499 1.53538) scale(7.29338 7.06215)" href="#P"><stop stop-color="#ffe226"/><stop offset=".121" stop-color="#ffdb27"/><stop offset=".295" stop-color="#ffc82a"/><stop offset=".502" stop-color="#ffa930"/><stop offset=".732" stop-color="#ff7e37"/><stop offset=".792" stop-color="#ff7139"/></radialGradient><radialGradient id="H" cx="0" cy="0" r="1" gradientTransform="translate(15.2817 -3.05706) scale(31.1181 30.1315)" href="#P"><stop offset=".113" stop-color="#fff44f"/><stop offset=".456" stop-color="#ff980e"/><stop offset=".622" stop-color="#ff5634"/><stop offset=".716" stop-color="#ff3647"/><stop offset=".904" stop-color="#e31587"/></radialGradient><radialGradient id="I" cx="0" cy="0" r="1" gradientTransform="translate(12.6953 -1.38643) rotate(83.7803) scale(22.0889 14.9604)" href="#P"><stop stop-color="#fff44f"/><stop offset=".06" stop-color="#ffe847"/><stop offset=".168" stop-color="#ffc830"/><stop offset=".304" stop-color="#ff980e"/><stop offset=".356" stop-color="#ff8b16"/><stop offset=".455" stop-color="#ff672a"/><stop offset=".57" stop-color="#ff3647"/><stop offset=".737" stop-color="#e31587"/></radialGradient><radialGradient id="J" cx="0" cy="0" r="1" gradientTransform="translate(9.485 4.08674) scale(19.4244 18.8086)" href="#P"><stop offset=".137" stop-color="#fff44f"/><stop offset=".48" stop-color="#ff980e"/><stop offset=".592" stop-color="#ff5634"/><stop offset=".655" stop-color="#ff3647"/><stop offset=".904" stop-color="#e31587"/></radialGradient><radialGradient id="K" cx="0" cy="0" r="1" gradientTransform="translate(14.4914 5.10728) scale(21.2609 20.5869)" href="#P"><stop offset=".094" stop-color="#fff44f"/><stop offset=".231" stop-color="#ffe141"/><stop offset=".509" stop-color="#ffaf1e"/><stop offset=".626" stop-color="#ff980e"/></radialGradient><linearGradient id="L" x1="18.103" y1="3.076" x2="4.144" y2="17.494" href="#P"><stop offset=".167" stop-color="#fff44f" stop-opacity=".8"/><stop offset=".266" stop-color="#fff44f" stop-opacity=".634"/><stop offset=".489" stop-color="#fff44f" stop-opacity=".217"/><stop offset=".6" stop-color="#fff44f" stop-opacity="0"/></linearGradient><clipPath id="M"><path fill="#fff" d="M0 0h20.4v20.4H0z"/></clipPath><path id="N" d="M19.661 6.85c-.444-1.034-1.344-2.15-2.049-2.503.503.942.851 1.955 1.034 3v.009l.002.01c.787 2.181.673 4.573-.318 6.674-1.17 2.432-4.002 4.924-8.437 4.802-4.79-.131-9.011-3.574-9.799-8.083-.144-.711 0-1.072.072-1.649-.098.449-.153.906-.164 1.364v.051c.005 2.474.967 4.857 2.697 6.678s4.103 2.948 6.649 3.158a10.45 10.45 0 0 0 7.105-2.023c2.023-1.511 3.388-3.702 3.825-6.14l.046-.383c.21-1.684-.017-3.391-.663-4.968l-.001.001z"/><path id="O" d="M10.228 8.626C10.211 8.872 9.314 9.72 9 9.72c-2.904 0-3.375 1.701-3.375 1.701.129 1.432 1.159 2.613 2.405 3.235l.172.08.3.119c.428.146.876.23 1.329.248 5.091.231 6.076-5.894 2.403-7.672.867-.109 1.744.097 2.462.579-.449-.767-1.099-1.405-1.885-1.849s-1.679-.679-2.589-.681l-.359.018c-1.025.068-2.004.434-2.811 1.049.156.128.331.298.702.651.693.661 2.47 1.346 2.474 1.426v.002z"/><linearGradient id="P" gradientUnits="userSpaceOnUse"/></defs></svg>`,
@@ -10,7 +9,7 @@ const ICONS = {
 
 const API_ENDPOINT = "https://api.webstatus.dev/v1/features/";
 
-const BASELINE_DEFS = {
+const BASELINE_DEFS = /** @type {const} */ {
   limited: {
     title: "Limited availability",
     defaultDescription:
@@ -37,7 +36,7 @@ const BASELINE_DEFS = {
   },
 };
 
-const SUPPORT_ICONS = {
+const SUPPORT_ICONS = /** @type {const} */ {
   available: `<svg
     xmlns="http://www.w3.org/2000/svg"
     width="17"
@@ -95,12 +94,45 @@ const SUPPORT_ICONS = {
  *
  * <baseline-status featureId="anchor-positioning"></baseline-status>
  */
-/** @typedef {{baseline: { status:string }, name: boolean}} Feature */
-class BaselineStatus extends ShadowElement {
-  static {
-    this.register("baseline-status", BaselineStatus);
-  }
 
+/**
+ * @typedef Feature
+ * @property {BaselineType} baseline
+ * @property {string} [feature_id]
+ * @property {string} name
+ * @property {SpecType} [spec]
+ * @property {BrowserImplementations} [browser_implementations]
+ */
+
+/**
+ * @typedef BaselineType
+ * @property {string} [high_date]
+ * @property {string} [low_date]
+ * @property {Status} status
+ */
+
+/**
+ * @typedef BrowserImplementations
+ * @property {BrowserImplementation} chrome
+ * @property {BrowserImplementation} edge
+ * @property {BrowserImplementation} firefox
+ * @property {BrowserImplementation} safari
+ */
+
+/**
+ * @typedef BrowserImplementation
+ * @property {string} date
+ * @property {Status} status
+ * @property {string} version
+ */
+
+/** @typedef {'limited' | 'newly' | 'widely' | 'no_data'} Status */
+
+/**
+ * @typedef SpecType
+ * @property {object[]} links
+ */
+class BaselineStatus extends ShadowElement {
   /**
    * @type {Feature}
    */
@@ -251,7 +283,7 @@ class BaselineStatus extends ShadowElement {
   }
 
   /**
-   * @returns {string}
+   * @returns {string | null}
    */
   get featureId() {
     return this.getAttribute("featureId");
@@ -263,9 +295,8 @@ class BaselineStatus extends ShadowElement {
     this.fetchData()
       .then((feature) => {
         this.feature = feature;
-        super.reRender();
       })
-      .catch(() => this.reRender());
+      .finally(() => this.reRender());
   }
 
   /**
@@ -276,7 +307,9 @@ class BaselineStatus extends ShadowElement {
     return fetch(url, { cache: "force-cache" })
       .then((response) => {
         if (!response.ok) {
-          throw new Error(response.status);
+          throw new Error(
+            `Failed to fetch feature ${this.featureId} (HTTP ${response.status})`,
+          );
         }
         return response;
       })
@@ -284,8 +317,8 @@ class BaselineStatus extends ShadowElement {
   }
 
   /**
-   * @param {string} baseline
-   * @param {object} browserImplementation
+   * @param {Status} baseline
+   * @param {BrowserImplementation} [browserImplementation]
    * @returns {string}
    */
   renderSupportIcon(baseline, browserImplementation) {
@@ -294,7 +327,9 @@ class BaselineStatus extends ShadowElement {
         ? browserImplementation?.status || "unavailable"
         : baseline;
     const icon =
-      support === "newly" || support === "widely" ? "available" : support;
+      support === "newly" || support === "widely" || support === "limited"
+        ? "available"
+        : support;
     return `<browser-support-icon class="support-${support}">
       ${SUPPORT_ICONS[icon]}
     </browser-support-icon>`;
@@ -303,7 +338,7 @@ class BaselineStatus extends ShadowElement {
   /**
    * Returns feature's low_date as mm-yyyy string or empty string if low_date
    * is not present.
-   * @param {object} feature
+   * @param {Feature} feature
    * @returns {string}
    */
   getBaselineDate(feature) {
@@ -317,7 +352,7 @@ class BaselineStatus extends ShadowElement {
 
   /**
    * Returns Baseline's description.
-   * @param {string} baseline
+   * @param {Status} baseline
    * @param {string} date
    * @returns {string}
    */
@@ -336,7 +371,7 @@ class BaselineStatus extends ShadowElement {
 
   /**
    * @param {Feature} feature
-   * @param {boolean} isLoading
+   * @param {boolean } [isLoading]
    * @returns {string}
    */
   renderTemplate(feature, isLoading) {
@@ -346,6 +381,7 @@ class BaselineStatus extends ShadowElement {
       baseline === "limited" || baseline === "no_data"
         ? ""
         : `<strong>Baseline</strong> `;
+
     const title = isLoading ? "Loading..." : BASELINE_DEFS[baseline].title;
     const badge =
       baseline === "newly"
@@ -359,6 +395,16 @@ class BaselineStatus extends ShadowElement {
     const { chrome, edge, firefox, safari } =
       feature.browser_implementations || {};
 
+    /**
+     * @param {string} title
+     * @param {string} year
+     * @param {string} badge
+     * @param {string} chrome
+     * @param {string} edge
+     * @param {string} firefox
+     * @param {string} safari
+     * @returns {string}
+     */
     const getAriaLabel = (
       title,
       year,
@@ -409,7 +455,7 @@ class BaselineStatus extends ShadowElement {
         ${description}
       </p>
       <p>
-        ${baseline === "no_data" ? "" : `<a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id}.yml" target="_top">Learn more</a>`}
+        ${baseline === "no_data" ? "" : `<a href="https://github.com/web-platform-dx/web-features/blob/main/features/${feature.feature_id || ""}.yml" target="_top">Learn more</a>`}
       </p>
     </details>`;
   }
@@ -418,10 +464,9 @@ class BaselineStatus extends ShadowElement {
    * @returns {string}
    */
   render() {
-    if (!this.featureId) {
-      return this.renderTemplate(this.feature);
-    }
-    return this.renderTemplate(this.feature, true);
+    return this.feature
+      ? this.renderTemplate(this.feature)
+      : this.renderTemplate(this.feature, true);
   }
 
   /**

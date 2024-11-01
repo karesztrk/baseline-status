@@ -2,14 +2,14 @@
 	"version": 3,
 	"file": "index.d.ts",
 	"names": [
-		"Feature"
+		"Status"
 	],
 	"sources": [
-		"../src/baseline-status.js"
+		"../src/BaselineStatus.js"
 	],
 	"sourcesContent": [
 		null
 	],
-	"mappings": ";;;;;;;;;;;;;;;;;;;;MAiG4DA,OAAOA",
+	"mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAgI0DA,MAAMA",
 	"ignoreList": []
 }
