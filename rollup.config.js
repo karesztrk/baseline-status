@@ -1,8 +1,8 @@
 import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
+import { defineConfig } from "rollup";
 import minifyHTML from "rollup-plugin-html-literals";
 import summary from "rollup-plugin-summary";
-import { defineConfig } from "rollup";
 
 export default defineConfig({
   input: "./src/index.js",

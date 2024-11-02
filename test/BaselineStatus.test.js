@@ -1,13 +1,13 @@
-import { BaselineStatus, BaselineIcon } from "../src/index.js";
-import { expect, fixture, assert } from "@open-wc/testing";
+import { assert, expect, fixture } from "@open-wc/testing";
+import { BaselineIcon, BaselineStatus } from "../src/index.js";
 
 describe("Baseline-status", () => {
-  let realFetch = window.fetch;
+  const realFetch = window.fetch;
 
   window.customElements.define("baseline-status", BaselineStatus);
   window.customElements.define("baseline-icon", BaselineIcon);
 
-  beforeEach(function () {
+  beforeEach(() => {
     window.fetch = realFetch;
   });
 
@@ -17,8 +17,8 @@ describe("Baseline-status", () => {
   });
 
   it("renders with default values", async () => {
-    const el = await fixture(`<baseline-status></baseline-status>`);
-    await expect(el).shadowDom.to.equalSnapshot();
+    const el = await fixture("<baseline-status></baseline-status>");
+    expect(el).shadowDom.to.equalSnapshot();
   });
 
   it("renders baseline-low widget for an existing feature", async () => {
@@ -49,7 +49,7 @@ describe("Baseline-status", () => {
     const el = await fixture(
       `<baseline-status featureId="accent-color"></baseline-status>`,
     );
-    await expect(el).shadowDom.to.equalSnapshot();
+    expect(el).shadowDom.to.equalSnapshot();
   });
 
   it("renders baseline-high widget for an existing feature", async () => {
@@ -80,7 +80,7 @@ describe("Baseline-status", () => {
     const el = await fixture(
       `<baseline-status featureId="array"></baseline-status>`,
     );
-    await expect(el).shadowDom.to.equalSnapshot();
+    expect(el).shadowDom.to.equalSnapshot();
   });
 
   it("renders default widget for an unexisting feature", async () => {
@@ -94,6 +94,6 @@ describe("Baseline-status", () => {
     const el = await fixture(
       `<baseline-status featureId="i-dont-exist"></baseline-status>`,
     );
-    await expect(el).shadowDom.to.equalSnapshot();
+    expect(el).shadowDom.to.equalSnapshot();
   });
 });

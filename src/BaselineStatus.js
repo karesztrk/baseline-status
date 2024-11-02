@@ -360,7 +360,8 @@ class BaselineStatus extends ShadowElement {
       return `Since ${date} this feature works across the latest
         devices and browser versions. This feature might not work in older
         devices or browsers.`;
-    } else if (baseline === "widely" && date) {
+    }
+    if (baseline === "widely" && date) {
       return `This feature is well established and works across many
         devices and browser versions. It’s been available across browsers
         since ${date}`;
@@ -379,7 +380,7 @@ class BaselineStatus extends ShadowElement {
     const preTitle =
       baseline === "limited" || baseline === "no_data"
         ? ""
-        : `<strong>Baseline</strong> `;
+        : "<strong>Baseline</strong> ";
 
     const title = isLoading ? "Loading..." : BASELINE_DEFS[baseline].title;
     const badge =
@@ -413,10 +414,16 @@ class BaselineStatus extends ShadowElement {
       firefox = "no",
       safari = "no",
     ) => {
-      if (title === "Unknown availability") {
-        chrome = edge = firefox = safari = "unknown";
-      }
-      return `Baseline: ${title}${year ? ` ${year}` : ""}${badge ? ` (newly available)` : ""}. Supported in Chrome: ${chrome === "available" ? "yes" : chrome}. Supported in Edge: ${edge === "available" ? "yes" : edge}. Supported in Firefox: ${firefox === "available" ? "yes" : firefox}. Supported in Safari: ${safari === "available" ? "yes" : safari}.`;
+      const unknown = title === "Unknown availability";
+      const browsers = unknown
+        ? {
+            chrome: "unknown",
+            edge: "unknown",
+            firefox: "unknown",
+            safari: "unknown",
+          }
+        : { chrome, edge, firefox, safari };
+      return `Baseline: ${title}${year ? ` ${year}` : ""}${badge ? " (newly available)" : ""}. Supported in Chrome: ${browsers.chrome === "available" ? "yes" : browsers.chrome}. Supported in Edge: ${browsers.edge === "available" ? "yes" : browsers.edge}. Supported in Firefox: ${browsers.firefox === "available" ? "yes" : browsers.firefox}. Supported in Safari: ${browsers.safari === "available" ? "yes" : browsers.safari}.`;
     };
 
     return ` <h1>${feature.name}</h1>
@@ -436,10 +443,10 @@ class BaselineStatus extends ShadowElement {
           <div class="baseline-status-title" aria-hidden="true">
             <div>${preTitle} ${title} ${year} ${badge}</div>
             <div class="baseline-status-browsers">
-              <span>${ICONS["chrome"]} ${this.renderSupportIcon(baseline, chrome)}</span>
-              <span>${ICONS["edge"]} ${this.renderSupportIcon(baseline, edge)}</span>
-              <span>${ICONS["firefox"]} ${this.renderSupportIcon(baseline, firefox)}</span>
-              <span>${ICONS["safari"]} ${this.renderSupportIcon(baseline, safari)}</span>
+              <span>${ICONS.chrome} ${this.renderSupportIcon(baseline, chrome)}</span>
+              <span>${ICONS.edge} ${this.renderSupportIcon(baseline, edge)}</span>
+              <span>${ICONS.firefox} ${this.renderSupportIcon(baseline, firefox)}</span>
+              <span>${ICONS.safari} ${this.renderSupportIcon(baseline, safari)}</span>
             </div>
           </div>
         </div>
