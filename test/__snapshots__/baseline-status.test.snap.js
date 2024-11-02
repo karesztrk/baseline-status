@@ -8,8 +8,7 @@
 
 export const snapshots = {};
 
-snapshots["Baseline-status renders with default values"] = 
-`<h1>
+snapshots["Baseline-status renders with default values"] = `<h1>
   Unknown feature
 </h1>
 <details>
@@ -61,7 +60,7 @@ snapshots["Baseline-status renders with default values"] =
 /* end snapshot Baseline-status renders with default values */
 
 snapshots["Baseline-status renders baseline-low widget for existing feature"] =
-`<h1>
+  `<h1>
   accent-color
 </h1>
 <details>
@@ -104,8 +103,9 @@ snapshots["Baseline-status renders baseline-low widget for existing feature"] =
 `;
 /* end snapshot Baseline-status renders baseline-low widget for existing feature */
 
-snapshots["Baseline-status renders baseline-low widget for an existing feature"] = 
-`<h1>
+snapshots[
+  "Baseline-status renders baseline-low widget for an existing feature"
+] = `<h1>
   accent-color
 </h1>
 <details>
@@ -170,8 +170,9 @@ snapshots["Baseline-status renders baseline-low widget for an existing feature"]
 `;
 /* end snapshot Baseline-status renders baseline-low widget for an existing feature */
 
-snapshots["Baseline-status renders baseline-high widget for an existing feature"] = 
-`<h1>
+snapshots[
+  "Baseline-status renders baseline-high widget for an existing feature"
+] = `<h1>
   Arrays (initial support)
 </h1>
 <details>
@@ -233,8 +234,8 @@ snapshots["Baseline-status renders baseline-high widget for an existing feature"
 `;
 /* end snapshot Baseline-status renders baseline-high widget for an existing feature */
 
-snapshots["Baseline-status renders default widget for an unexisting feature"] = 
-`<h1>
+snapshots["Baseline-status renders default widget for an unexisting feature"] =
+  `<h1>
   i-dont-exist
 </h1>
 <details>
@@ -285,8 +286,9 @@ snapshots["Baseline-status renders default widget for an unexisting feature"] =
 `;
 /* end snapshot Baseline-status renders default widget for an unexisting feature */
 
-snapshots["Baseline-status renders loading status while api call is in flight"] =
-`<h1>
+snapshots[
+  "Baseline-status renders loading status while api call is in flight"
+] = `<h1>
   i-dont-exist
 </h1>
 <details>
@@ -325,4 +327,3 @@ snapshots["Baseline-status renders loading status while api call is in flight"] 
 </details>
 `;
 /* end snapshot Baseline-status renders loading status while api call is in flight */
-

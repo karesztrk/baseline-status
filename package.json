@@ -12,7 +12,9 @@
     "test": "wtr test/**/*.test.js --node-resolve",
     "test:update": "wtr test/**/*.test.js --node-resolve --update-snapshots",
     "generate:types": "node ./scripts/generate-types.js",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build",
+    "format": "biome format --write",
+    "check": "biome check --write"
   },
   "exports": {
     ".": {
@@ -22,21 +24,16 @@
     },
     "./package.json": "./package.json"
   },
-  "files": [
-    "dist",
-    "types"
-  ],
+  "files": ["dist", "types"],
   "author": "Károly Török",
-  "contributors": [
-    "ewag@google.com"
-  ],
+  "contributors": ["ewag@google.com"],
   "license": "Apache-2.0",
   "repository": "github:web-platform-dx/baseline-status",
   "dependencies": {
     "@karesztrk/webcomponent-base": "^1.0.10"
   },
   "devDependencies": {
-    "@eslint/js": "^9.3.0",
+    "@biomejs/biome": "^1.9.4",
     "@open-wc/semantic-dom-diff": "^0.20.1",
     "@open-wc/testing": "^4.0.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -46,11 +43,10 @@
     "@web/rollup-plugin-html": "^2.3.0",
     "@web/test-runner": "^0.18.2",
     "dts-buddy": "^0.5.3",
-    "eslint": "^9.3.0",
-    "eslint-plugin-mocha": "^10.4.3",
     "globals": "^15.3.0",
     "rollup": "^3.0.0",
     "rollup-plugin-html-literals": "^1.1.8",
-    "rollup-plugin-summary": "^2.0.0"
+    "rollup-plugin-summary": "^2.0.0",
+    "typescript": "~5.5.2"
   }
 }
