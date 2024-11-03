@@ -1,6 +1,6 @@
 {
   "name": "@karesztrk/baseline-status",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A widget displaying Baseline status of a web feature",
   "main": "baseline-status.min.js",
   "type": "module",
@@ -24,9 +24,14 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "types"],
+  "files": [
+    "dist",
+    "types"
+  ],
   "author": "Károly Török",
-  "contributors": ["ewag@google.com"],
+  "contributors": [
+    "ewag@google.com"
+  ],
   "license": "Apache-2.0",
   "repository": "github:web-platform-dx/baseline-status",
   "dependencies": {
