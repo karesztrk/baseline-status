@@ -1,6 +1,6 @@
 {
   "name": "@karesztrk/baseline-status",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A widget displaying Baseline status of a web feature",
   "main": "baseline-status.min.js",
   "type": "module",
