@@ -77,7 +77,7 @@ declare module '@karesztrk/baseline-status' {
 		
 		reRender(): void;
 	}
-	export default HeadlessStatus;
+	export default BonelessStatus;
 	type Feature_1 = {
 		baseline: BaselineType_1;
 		feature_id?: string | undefined;
