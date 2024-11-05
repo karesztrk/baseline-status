@@ -86,16 +86,6 @@ const SUPPORT_ICONS = /** @type {const} */ {
 };
 
 /**
- * A web component that renders Baseline support information based on the
- * Web Features project.
- * @see https://github.com/web-platform-dx/web-features/
- *
- * Example usage:
- *
- * <baseline-status featureId="anchor-positioning"></baseline-status>
- */
-
-/**
  * @typedef Feature
  * @property {BaselineType} baseline
  * @property {string} [feature_id]
@@ -132,6 +122,16 @@ const SUPPORT_ICONS = /** @type {const} */ {
  * @typedef SpecType
  * @property {object[]} links
  */
+
+/**
+ * A web component that renders Baseline support information based on the
+ * Web Features project.
+ * @see https://github.com/web-platform-dx/web-features/
+ *
+ * Example usage:
+ *
+ * <baseline-status featureId="anchor-positioning"></baseline-status>
+ */
 class BaselineStatus extends ShadowElement {
   /**
    * @type {Feature}
@@ -157,6 +157,7 @@ class BaselineStatus extends ShadowElement {
         font-family: Roboto, sans-serif;
         font-size: 14px;
         font-style: normal;
+        container-type: inline-size;
       }
 
       h1 {
@@ -178,21 +179,7 @@ class BaselineStatus extends ShadowElement {
       }
 
       .baseline-status-title {
-        gap: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        flex: 1;
-      }
-
-      .baseline-status-title {
-        flex: 1;
-      }
-
-      .baseline-status-title div:first-child {
-        display: flex;
-        align-items: center;
-        gap: 0.2rem;
+        grid-area: title;
       }
 
       .baseline-badge {
@@ -203,15 +190,14 @@ class BaselineStatus extends ShadowElement {
         border-radius: 2px;
         text-transform: uppercase;
         line-height: 20px;
-        margin-inline: 0.5rem;
         white-space: nowrap;
       }
 
       .baseline-status-browsers {
+        grid-area: browsers;
         font-size: 0;
-        max-width: 200px;
         display: flex;
-        gap: 16px;
+        gap: 1rem;
       }
 
       .baseline-status-browsers span {
@@ -236,35 +222,41 @@ class BaselineStatus extends ShadowElement {
       }
 
       details > summary .open-icon {
+        grid-area: open-icon;
         width: 10px;
         height: 20px;
         margin-left: auto;
         color: inherit;
       }
 
-      @media (min-width: 420px) {
-        details > summary .open-icon {
-          margin-left: 48px;
-        }
+      @media (prefers-reduced-motion: no-preference) {
+          details > summary svg.open-icon {
+            transition: all 0.3s;
+          }
       }
 
-      details > summary .open-icon svg {
-        transition: all 0.3s;
-      }
-
-      details[open] summary .open-icon svg {
+      details[open] summary svg.open-icon {
         transform: rotate(180deg);
       }
 
       summary {
-        display: flex;
+        display: grid;
+        grid-template-areas: "baseline-icon title browsers open-icon";
+        grid-template-columns: auto 1fr auto auto;
         cursor: pointer;
-        font-size: 16px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        justify-content: space-between;
-        padding: 16px 0;
+        font-size: 1rem;
+        gap: 1rem;
+        padding: 1rem 0;
+
+        @container (inline-size < 550px) {
+          grid-template-areas:
+            'baseline-icon title open-icon'
+            'baseline-icon browsers open-icon';
+				}
+      }
+
+      baseline-icon {
+        grid-area: baseline-icon;
       }
 
       summary::-webkit-details-marker {
@@ -441,22 +433,17 @@ class BaselineStatus extends ShadowElement {
           )}"
         >
           <baseline-icon support="${baseline}" aria-hidden="true"></baseline-icon>
-          <div class="baseline-status-title" aria-hidden="true">
-            <div>${preTitle} ${title} ${year} ${badge}</div>
-            <div class="baseline-status-browsers">
-              <span>${ICONS.chrome} ${this.renderSupportIcon(baseline, chrome)}</span>
-              <span>${ICONS.edge} ${this.renderSupportIcon(baseline, edge)}</span>
-              <span>${ICONS.firefox} ${this.renderSupportIcon(baseline, firefox)}</span>
-              <span>${ICONS.safari} ${this.renderSupportIcon(baseline, safari)}</span>
-            </div>
+          <div class="baseline-status-title">${preTitle} ${title} ${year} ${badge}</div>
+          <div class="baseline-status-browsers">
+            <span>${ICONS.chrome} ${this.renderSupportIcon(baseline, chrome)}</span>
+            <span>${ICONS.edge} ${this.renderSupportIcon(baseline, edge)}</span>
+            <span>${ICONS.firefox} ${this.renderSupportIcon(baseline, firefox)}</span>
+            <span>${ICONS.safari} ${this.renderSupportIcon(baseline, safari)}</span>
           </div>
-        </div>
 
-        <span class="open-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none" class="open-icon" aria-hidden="true">
             <path d="M5.5 6.45356L0.25 1.20356L1.19063 0.262939L5.5 4.59419L9.80937 0.284814L10.75 1.22544L5.5 6.45356Z" fill="currentColor"/>
           </svg>
-        </span>
       </summary>
       <p>
         ${description}
