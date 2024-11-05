@@ -5,11 +5,11 @@
 		"Status"
 	],
 	"sources": [
-		"../src/BaselineStatus.js"
+		"../src/BonelessStatus.js"
 	],
 	"sourcesContent": [
 		null
 	],
-	"mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAgI0DA,MAAMA",
+	"mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MA8D0DA,MAAMA",
 	"ignoreList": []
 }

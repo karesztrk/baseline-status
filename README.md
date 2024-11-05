@@ -12,6 +12,7 @@ This is a thin fork of the original [repo](https://github.com/web-platform-dx/ba
 - It's using a tiny and simple base class
 - Compressed icons
 - Web component name is customizable
+- You can bring your own icons (eg. boneless)
 
 ## Example
 
@@ -44,6 +45,34 @@ class YourComponent extends BaselineStatus {
 }
 
 export default YourComponent;
+```
+
+### Custom icons
+
+You can register your own icons with the `BonelessStatus` web component.
+_Where_ does this name is coming from? Check [this blog post](https://nerdy.dev/headless-boneless-and-skinless-ui) from Adam.
+_Why?_ Wrapping SVG images inside JS files increases the bundle size and blocks
+the caching capability of modern browsers.
+
+```js
+import { BonelessStatus, BaselineIcon } from "@karesztrk/baseline-status";
+
+customElements.define("baseline-icon", BaselineIcon);
+customElements.define("baseline-status", BonelessStatus);
+```
+
+```html
+<boneless-status featureId="array">
+  <template id="icons">
+    <svg slot="chrome"></svg>
+    <svg slot="edge"></svg>
+    <svg slot="firefox"></svg>
+    <svg slot="safari"></svg>
+    <svg slot="available"></svg>
+    <svg slot="unavailable"></svg>
+    <svg slot="no_data"></svg>
+  </template>
+</boneless-status>
 ```
 
 ## Usage
